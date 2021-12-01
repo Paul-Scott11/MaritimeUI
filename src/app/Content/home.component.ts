@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   success: string;
   mean: string; 
   stnDev: string;
-  freqOfNums: FreqOfNums[];
+  //freqOfNums: FreqOfNums[];
   rndNums: rndNums[];
   LessThan10: string;
   TenTo20: string;
