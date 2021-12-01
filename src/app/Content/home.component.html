@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col">
+            <h3 class="text-primary font-weight-bold mt-3 ml-3">Maritime Tech Test</h3>
+            <hr />
+        </div>
+        <div class="col-md-12 col">
+            <div>
+                <input type="file" class="custom-file-upload" accept=".csv" (change)="onFileSelected($event)"
+                    #fileUpload>
+                <div class="spinner-border" role="status" *ngIf="showSpinner">
+                    <span class="sr-only"></span>
+                </div>
+            </div>
+            <br />
+            <div class="text-danger col-md-12" *ngIf="error">
+                <h6>An error occurred</h6>
+                <p>{{ error }}</p>
+            </div>
+            <div class="text-primary col-md-12" *ngIf="success && !error">
+                <h6>File Loaded successfully</h6>
+                <p>{{ error }}</p>
+            </div>
+            <hr />
+        </div>
+        <div class="col-md-12 no-padding" *ngIf="LessThan10">
+            <label class="mx-auto">Arithmetic Mean: <b> {{mean}} </b></label>          
+        </div>
+        <div class="col-md-12 no-padding" *ngIf="LessThan10">
+            <label class="mx-auto">Standard Deviation: <b> {{stnDev}} </b></label> 
+            <hr />
+        </div>
+      
+        <div class="col-md-12 col" *ngIf="LessThan10" >
+            <label class="mx-auto">Frequencies of numbers in bins of 10's</label>   
+            <table class="table table-striped" >
+                <thead>
+                    <tr>
+                      <th>0's</th>
+                      <th>10's</th>
+                      <th>20's</th>
+                      <th>30's</th>
+                      <th>40's</th>
+                      <th>50's</th>    
+                      <th>60's</th>
+                      <th>70's</th>
+                      <th>80's</th>
+                      <th>90's</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-break">{{ LessThan10 }}</td>
+                    <td class="text-break">{{ TenTo20 }}</td>
+                    <td class="text-break">{{ TwentyT030 }}</td>
+                    <td class="text-break">{{ ThirtyT040 }}</td>
+                    <td class="text-break">{{ FourtyTo50 }}</td>
+                    <td class="text-break">{{ FiftyTo60 }}</td>
+                    <td class="text-break">{{ SixtyTo70 }}</td>
+                    <td class="text-break">{{ SeventyTo80 }}</td>
+                    <td class="text-break">{{ EightyTo90 }}</td>
+                    <td class="text-break">{{ NintyTo100 }}</td>
+                  </tr>
+                </tbody>
+              </table>                
+        </div>
+    </div>
+</div>
